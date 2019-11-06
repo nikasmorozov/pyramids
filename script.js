@@ -3,58 +3,47 @@ let elementsArray = document.querySelectorAll('button');
 let place = document.getElementById("place");
 let symbol = '&#9786;';
 let lenght = document.getElementById('numero');
-// let lenght = 25;
 
 elementsArray.forEach(function (elem) {
   elem.addEventListener("click", function (e) {
+      let output = '';
     switch (e.target.textContent) {
 
-      case "triangle":
-
-        let star = '';
-
+      case "triangle":{
         for (i = 1; i < (Number(lenght.value) + 1); i++) {
           for (j = 0; j < i; j++) {
-            star += symbol + '&nbsp;';
+            output += symbol + '&nbsp;';
           };
-          star += '<br>';
+          output += '<br>';
         };
-
-        place.innerHTML = star;
+      }
         break;
-      case "pyramid":
-
-        let star2 = '';
-
+      case "pyramid":{
         for (i = 1; i < (Number(lenght.value) + 1); i++) {
           for (j = Number(lenght.value); j > i; j--) {
-            star2 += '&nbsp;';
+            output += '&nbsp;';
           };
           for (k = 0; k < i; k++) {
-            star2 += symbol + '&nbsp;';
+            output += symbol + '&nbsp;';
           };
-          star2 += '<br>';
+          output += '<br>';
         };
-
-        place.innerHTML = star2;
+      }
         break;
-      case "reversed-pyramid":
-
-        let star3 = '';
-
+      case "reversed-pyramid":{
         for (i = 0; i < Number(lenght.value); i++) {
           for (k = 0; k < i; k++) {
-            star3 += '&nbsp;';
+            output += '&nbsp;';
           };
           for (j = Number(lenght.value); j > i; j--) {
-            star3 += symbol + '&nbsp;';
+            output += symbol + '&nbsp;';
           };
-          star3 += '<br>';
+          output += '<br>';
         };
-
-        place.innerHTML = star3;
+      }
         break;
     }
+   place.innerHTML = output;
   });
 });
 
