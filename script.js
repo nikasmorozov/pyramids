@@ -2,7 +2,8 @@
 let elementsArray = document.querySelectorAll('button');
 let place = document.getElementById("place");
 let symbol = '&#9786;';
-let lenght = 25;
+let lenght = document.getElementById('numero');
+// let lenght = 25;
 
 elementsArray.forEach(function (elem) {
   elem.addEventListener("click", function (e) {
@@ -12,7 +13,7 @@ elementsArray.forEach(function (elem) {
 
         let star = '';
 
-        for (i = 1; i < (lenght + 1); i++) {
+        for (i = 1; i < (Number(lenght.value) + 1); i++) {
           for (j = 0; j < i; j++) {
             star += symbol + '&nbsp;';
           };
@@ -25,8 +26,8 @@ elementsArray.forEach(function (elem) {
 
         let star2 = '';
 
-        for (i = 1; i < (lenght + 1); i++) {
-          for (j = lenght; j > i; j--) {
+        for (i = 1; i < (Number(lenght.value) + 1); i++) {
+          for (j = Number(lenght.value); j > i; j--) {
             star2 += '&nbsp;';
           };
           for (k = 0; k < i; k++) {
@@ -41,11 +42,11 @@ elementsArray.forEach(function (elem) {
 
         let star3 = '';
 
-        for (i = 0; i < lenght; i++) {
+        for (i = 0; i < Number(lenght.value); i++) {
           for (k = 0; k < i; k++) {
             star3 += '&nbsp;';
           };
-          for (j = lenght; j > i; j--) {
+          for (j = Number(lenght.value); j > i; j--) {
             star3 += symbol + '&nbsp;';
           };
           star3 += '<br>';
@@ -59,5 +60,6 @@ elementsArray.forEach(function (elem) {
 
 document.getElementById('clear').addEventListener('click', function () {
   place.innerHTML = '';
+  lenght.value = '';
 }
 )
