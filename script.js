@@ -1,7 +1,7 @@
 
 let elementsArray = document.querySelectorAll('button');
 let place = document.getElementById("place");
-let symbol = '&#128169;';
+let symbol = '&#9786;';
 let lenght = 25;
 
 elementsArray.forEach(function (elem) {
