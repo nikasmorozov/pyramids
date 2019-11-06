@@ -18,8 +18,8 @@ button, input {
 
 #place {
   color: steelBlue;
-  font-size: 30px;
-  line-height: 22px;
+  font-size: 2px;
+  line-height: 1px;
   margin-top: 30px;
   font-family: "Courier New", Courier, monospace;
 }
@@ -36,5 +36,5 @@ input[type=number] {
 }
 
 input {
-  width: 20px;
+  width: 50px;
 }
