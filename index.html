@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  color: white;
+  margin: 20px;
+  background: steelBlue;
+  font-size: 20px;
+  border: none;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+#place {
+  color: steelBlue;
+  font-size: 30px;
+  line-height: 22px;
+  margin-top: 30px;
+  font-family: "Courier New", Courier, monospace;
+}
+    </style>
+</head>
+<body>
+        <div>
+                <button>triangle</button>
+                <button>pyramid</button>
+                <button>reversed-pyramid</button>
+                <button id="clear">clear</button>
+              </div>
+              <div id="place"></div>
+              
+    <script>
+        let elementsArray = document.querySelectorAll('button');
+let place = document.getElementById("place");
+let symbol = '&#9786;';
+let lenght = 2;
+
+elementsArray.forEach(function(elem) {
+    elem.addEventListener("click", function(e) {
+        switch(e.target.textContent) {
+
+            case "triangle":
+            
+let star = '';
+            
+for (i = 1; i < (lenght + 1); i++) {
+  for (j = 0; j < i; j++) {
+  star += symbol + '&nbsp;';
+};
+  star += '<br>';
+};
+         
+place.innerHTML = star;
+             break;
+             case "pyramid":
+            
+let star2 = '';
+            
+for (i = 1; i < (lenght + 1); i++) {
+  for (j = lenght; j > i; j--) {
+  star2 += '&nbsp;';
+  };
+  for (k = 0; k < i; k++) {
+  star2 += symbol + '&nbsp;' ;
+  };
+  star2 += '<br>';
+};
+
+place.innerHTML = star2;
+             break;
+            case "reversed-pyramid":
+            
+let star3 = '';
+            
+for (i = 0; i < lenght; i++) {
+  for (k = 0; k < i; k++) {
+  star3 += '&nbsp;' ;
+  };
+  for (j = lenght; j > i; j--) {
+  star3 += symbol + '&nbsp;';
+  };
+  star3 += '<br>';
+};
+
+place.innerHTML = star3;
+             break;
+          }
+    });
+});
+
+document.getElementById('clear').addEventListener('click', function(){
+  place.innerHTML = '';
+}
+)
+    </script>
+</body>
+</html>
