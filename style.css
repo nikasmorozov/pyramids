@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  color: white;
+  margin: 20px;
+  background: steelBlue;
+  font-size: 20px;
+  border: none;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+#place {
+  color: steelBlue;
+  font-size: 30px;
+  line-height: 22px;
+  margin-top: 30px;
+  font-family: "Courier New", Courier, monospace;
+}
